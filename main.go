@@ -29,19 +29,19 @@ func main() {
 	case "add":
 		addCmd.Parse(os.Args[2:])
 		fmt.Printf("Получение addDescription: %s addAmount: %d ", *addDescription, *addAmount)
-		// addExpense(os.Args[2])
+		addExpense(*addDescription, *addAmount)
 	case "summary":
 		summaryCmd.Parse(os.Args[2:])
 		fmt.Printf("Получение summaryMonth: %d ", *summaryMonth)
 
-		// sumExpense(id, os.Args[3])
+		sumExpense(*summaryMonth)
 	case "delete":
 		deleteCmd.Parse(os.Args[2:])
 		fmt.Printf("Получение deleteId: %d ", *deleteId)
 
-		// deleteExpense(id)
+		deleteExpense(*deleteId)
 	case "list":
-		// getList("")
+		getList()
 	default:
 		fmt.Println("wrong arguments")
 	}
