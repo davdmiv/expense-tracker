@@ -1,11 +1,9 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"os"
-
-	// "strconv"
-	"flag"
 )
 
 func main() {
@@ -28,17 +26,12 @@ func main() {
 	switch os.Args[1] {
 	case "add":
 		addCmd.Parse(os.Args[2:])
-		fmt.Printf("Получение addDescription: %s addAmount: %d ", *addDescription, *addAmount)
 		addExpense(*addDescription, *addAmount)
 	case "summary":
 		summaryCmd.Parse(os.Args[2:])
-		fmt.Printf("Получение summaryMonth: %d ", *summaryMonth)
-
 		sumExpense(*summaryMonth)
 	case "delete":
 		deleteCmd.Parse(os.Args[2:])
-		fmt.Printf("Получение deleteId: %d ", *deleteId)
-
 		deleteExpense(*deleteId)
 	case "list":
 		getList()

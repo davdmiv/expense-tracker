@@ -79,7 +79,11 @@ func deleteExpense(id int) {
 
 	if ok {
 		expenses = append(expenses[:idx], expenses[idx+1:]...)
+
 		writeFile(&expenses)
+
+		fmt.Println("Expense deleted successfully")
+
 		return
 	}
 
